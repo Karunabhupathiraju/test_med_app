@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import InstantConsultation from './Components/InstantConsultation/InstantConsultation';
+
 
 function App() {
   return (
