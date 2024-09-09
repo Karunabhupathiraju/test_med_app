@@ -1,0 +1,37 @@
+.finddoctor {
+    margin-top: 20px;
+}
+
+.home-search-container {
+    width: 100%;
+    padding: 20px;
+}
+
+.doctor-search-box {
+    position: relative;
+}
+
+.search-doctor-input-box {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.search-doctor-input-results {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 100;
+}
+
+.search-doctor-result-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.search-doctor-result-item:hover {
+    background-color: #f0f0f0;
+}
