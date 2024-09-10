@@ -1,12 +1,13 @@
 // src/components/BookingConsultation.js
 import React, { useState } from 'react';
-import DoctorCard from './DoctorCard';
-import FindDoctorSearch from './FindDoctorSearch';
+import DoctorCard from './DoctorCard/DoctorCard';
+import FindDoctorSearch from './FindDoctorSearch/FindDoctorSearch';
+
 import './BookingConsultation.css'; // Create and style this file as needed
 
 const BookingConsultation = () => {
   const [selectedDoctor, setSelectedDoctor] = useState(null);
-  const [doctors, setDoctors] = useState([
+  const [doctors] = useState([
     { id: 1, name: 'Dr. Robert', experience: '10 years', rating: '4.8', specialty: 'Dentist', image: '/images/doctor1.png' },
     { id: 2, name: 'Dr. Bhanu', experience: '8 years', rating: '4.5', specialty: 'Gynecologist', image: '/images/doctor2.png' },
     { id: 3, name: 'Dr. Revathi', experience: '5 years', rating: '4.7', specialty: 'Dermatologist', image: '/images/doctor3.png' },

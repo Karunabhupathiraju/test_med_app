@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import InstantConsultation from './Components/InstantConsultation/InstantConsultation';
 import DoctorCard from './Components/DoctorCard/DoctorCard';
-import BookingConsultation from './components/BookingConsultation'; // Import the BookingConsultation component
+import BookingConsultation from './Components/BookingConsultation'; // Import the BookingConsultation component
 
 function App() {
   // Define an array of doctor data
