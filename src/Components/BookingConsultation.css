@@ -16,3 +16,20 @@
   border-radius: 8px;
   background-color: #f9f9f9;
 }
+
+/* src/components/Notification/Notification.css */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #d4edda; /* Light green background */
+  color: #155724; /* Dark green text */
+  padding: 15px;
+  border: 1px solid #c3e6cb; /* Slightly darker border */
+  border-radius: 5px;
+  z-index: 1000; /* Ensure it's on top of other content */
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+

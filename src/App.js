@@ -1,10 +1,10 @@
-// src/App.js
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import InstantConsultation from './Components/InstantConsultation/InstantConsultation';
 import DoctorCard from './Components/DoctorCard/DoctorCard';
 import BookingConsultation from './Components/BookingConsultation'; // Import the BookingConsultation component
+import Notification from './Components/Notification/Notification'; // Import the Notification component
 
 function App() {
   // Define an array of doctor data
@@ -18,6 +18,14 @@ function App() {
     { id: 7, name: 'Dr. Linda', experience: '7 years', rating: '4.4', specialty: 'Ayurveda', image: '/images/doctor7.png' },
     { id: 8, name: 'Dr. Prasad', experience: '9 years', rating: '4.7', specialty: 'Pediatrician', image: '/images/doctor8.png' },
   ];
+
+  // Notification state
+  const [notification, setNotification] = useState(null);
+
+  const handleBooking = () => {
+    // Show notification when a booking is made
+    setNotification("Your appointment has been successfully booked!");
+  };
 
   return (
     <Router>
@@ -37,7 +45,7 @@ function App() {
           </a>
           {/* Add Link to navigate to Booking Consultation */}
           <Link to="/booking-consultation">
-            <button>Book Consultation</button>
+            <button onClick={handleBooking}>Book Consultation</button>
           </Link>
           {/* Add Link to navigate to Instant Consultation */}
           <Link to="/instant-consultation">
@@ -58,6 +66,14 @@ function App() {
             />
           ))}
         </div>
+
+        {/* Show Notification if it's set */}
+        {notification && (
+          <Notification
+            message={notification}
+            onClose={() => setNotification(null)} // Reset notification after closing
+          />
+        )}
       </div>
     </Router>
   );
