@@ -1,69 +1,64 @@
 import React, { useState } from 'react';
-import './AppointmentForm.css';
 
-const AppointmentForm = ({ doctor, onClose }) => {
-    const [patientName, setPatientName] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState(''); // Add this line
-    const [appointmentDate, setAppointmentDate] = useState('');
-    const [appointmentTime, setAppointmentTime] = useState('');
+const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
+    const [name, setName] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [date, setDate] = useState('');
+    const [time, setTime] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Add your form submission logic here
-        console.log('Appointment booked for:', patientName, phoneNumber, appointmentDate, appointmentTime);
-        onClose(); // Close the form after submission
+        onSubmit({ name, phoneNumber, date, time });
+        setName('');
+        setPhoneNumber('');
+        setDate('');
+        setTime('');
     };
 
     return (
-        <div className="appointment-form-overlay">
-            <div className="appointment-form-container">
-                <h2>Book Appointment with {doctor.name}</h2>
-                <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="patientName">Patient's Name:</label>
-                        <input
-                            type="text"
-                            id="patientName"
-                            value={patientName}
-                            onChange={(e) => setPatientName(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="phoneNumber">Phone Number:</label>
-                        <input
-                            type="text" // Changed type to text for phone number
-                            id="phoneNumber"
-                            value={phoneNumber} // Fixed value
-                            onChange={(e) => setPhoneNumber(e.target.value)} // Fixed onChange
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="appointmentDate">Appointment Date:</label>
-                        <input
-                            type="date"
-                            id="appointmentDate"
-                            value={appointmentDate}
-                            onChange={(e) => setAppointmentDate(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="appointmentTime">Appointment Time:</label>
-                        <input
-                            type="time"
-                            id="appointmentTime"
-                            value={appointmentTime}
-                            onChange={(e) => setAppointmentTime(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <button type="submit" className="submit-button">Book Appointment</button>
-                    <button type="button" className="close-button" onClick={onClose}>Close</button>
-                </form>
+        <form onSubmit={handleSubmit} className="appointment-form">
+            <div className="form-group">
+                <label htmlFor="name">Name:</label>
+                <input
+                    type="text"
+                    id="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                />
             </div>
-        </div>
+            <div className="form-group">
+                <label htmlFor="phoneNumber">Phone Number:</label>
+                <input
+                    type="tel"
+                    id="phoneNumber"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    required
+                />
+            </div>
+            <div className="form-group">
+                <label htmlFor="date">Date:</label>
+                <input
+                    type="date"
+                    id="date"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                    required
+                />
+            </div>
+            <div className="form-group">
+                <label htmlFor="time">Time:</label>
+                <input
+                    type="time"
+                    id="time"
+                    value={time}
+                    onChange={(e) => setTime(e.target.value)}
+                    required
+                />
+            </div>
+            <button type="submit">Book Now</button>
+        </form>
     );
 };
 
