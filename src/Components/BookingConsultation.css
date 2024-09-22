@@ -1,35 +1,37 @@
-/* src/components/BookingConsultation.css */
-.booking-consultation {
-  padding: 20px;
+.searchpage-container {
+    max-width: 1200px;
+    margin: auto;
+    margin-top:10%;
+    color: #414146;
+    padding: 0 20px;
+    position: static;
+    width: 100%;
+}
+.searchpage-container img {
+    max-width: 100%;
+}
+.search-results-container .doctorcard{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 18px;
+    border-radius: 4px;
+    background-color: #fff;
+
 }
 
-.doctor-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+.search-results-container>h2 {
+    text-align: left;
+    font-size: 24px;
+    font-weight: 700;
 }
 
-.selected-doctor-info {
-  margin-top: 20px;
-  padding: 16px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-}
-
-/* src/components/Notification/Notification.css */
-.notification {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #d4edda; /* Light green background */
-  color: #155724; /* Dark green text */
-  padding: 15px;
-  border: 1px solid #c3e6cb; /* Slightly darker border */
-  border-radius: 5px;
-  z-index: 1000; /* Ensure it's on top of other content */
-  display: flex;
-  align-items: center;
-  font-size: 16px;
+.search-results-container>h3 {
+    margin-top: 12px;
+    color: #2d2d32;
+    text-align: left;
+    font-size: 15px;
 }
 
